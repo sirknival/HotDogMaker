@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL" Id="{001a3854-8e4b-48d2-a54c-443e8698fab2}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	heaterElementEnable AT%Q* : BOOL := FALSE;
+	temperatureSensor AT%I* : INT := 0;
+	temperatureSensorCopy AT%I* : INT := 0;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

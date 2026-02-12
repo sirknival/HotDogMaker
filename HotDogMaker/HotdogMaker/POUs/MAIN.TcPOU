@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{53170a53-f9f5-46ba-beb0-d0265233e821}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	flagStartup: BOOL := FALSE;
+	measuredTemperature : REAL := 0.0;
+	K_GAIN : REAL := 0.0215;
+	B_OFFSET : REAL := 44;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF flagStartup = FALSE THEN
+	GVL.heaterElementEnable := TRUE;
+	flagStartup := TRUE;
+END_IF
+(*Raumptemperatur entspricht ca -1000 bei 20 Grad*)
+(*Messung entspricht ca -1000 bei 20 Grad*)
+
+measuredTemperature := INT_TO_REAL(GVL.temperatureSensorCopy) * K_GAIN + B_OFFSET;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
