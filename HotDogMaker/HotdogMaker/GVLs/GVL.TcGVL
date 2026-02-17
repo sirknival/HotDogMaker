@@ -4,8 +4,8 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	heaterElementEnable AT%Q* : BOOL := FALSE;
-	temperatureSensor AT%I* : INT := 0;
 	temperatureSensorCopy AT%I* : INT := 0;
+	temperatureSensor AT%I* : INT := 0;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

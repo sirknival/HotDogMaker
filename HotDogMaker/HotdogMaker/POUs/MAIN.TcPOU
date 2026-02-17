@@ -5,8 +5,8 @@
 VAR
 	flagStartup: BOOL := FALSE;
 	measuredTemperature : REAL := 0.0;
-	K_GAIN : REAL := 0.0215;
-	B_OFFSET : REAL := 44;
+	K_GAIN : REAL := 0.032;
+	B_OFFSET : REAL := 38;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -17,7 +17,7 @@ END_IF
 (*Raumptemperatur entspricht ca -1000 bei 20 Grad*)
 (*Messung entspricht ca -1000 bei 20 Grad*)
 
-measuredTemperature := INT_TO_REAL(GVL.temperatureSensorCopy) * K_GAIN + B_OFFSET;]]></ST>
+measuredTemperature := INT_TO_REAL(GVL.temperatureSensor) * K_GAIN + B_OFFSET;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

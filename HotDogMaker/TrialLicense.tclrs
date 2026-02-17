@@ -2,9 +2,9 @@
 <TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
 	<LicenseInfo>
 		<SystemId>{F3519D80-5A28-7680-7E6B-62010C966A60}</SystemId>
-		<IssueTime>2026-02-12T15:33:00</IssueTime>
-		<ExpireTime>2026-02-20T00:00:00</ExpireTime>
-		<LicenseKey>626a8b482ccad65dcaf1ef9a0b24141355ca88f0a89cb75e1ab548204a6fbdb0c636202003f0dbbff4cf7b6f097174be8d4e5cf9cc2e0e48da951c571e6217aec451c8acb27a2d20154d9b0903d457b3a85b698429837fa48adebd7917b161beb336268a791d261e87977568e69962426778446dc545aa63d3692ffbbf3edc71cf8dd66dcd24f859c376d049b616525c1994eb353eb17ead46d237ba513ed6d1c9a3010e86276ee1df4d94aa638274d1d796e86d7406740587f8fb3ebd0fd0259c85b20dedd196e0da4b28d9907b81f691425ce120da57d66a58b3bb188ec74fa834a7f3527b0c25c28070d8fae09ba0041e009a4851215cd9623f16c527ab80</LicenseKey>
+		<IssueTime>2026-02-13T09:08:00</IssueTime>
+		<ExpireTime>2026-02-21T00:00:00</ExpireTime>
+		<LicenseKey>3627cabfc7b51f81bdd64d2a6daa1fc45018426f9710a51dd80cd0393102bd4fad67d8d9595cf676305c77450eb23c2559135984f95e61933b516d0deb82c3dd6c4ed7b796a7d36494a5e45e2195a34f7f9acf928304043494b1a867472305852787ad3ee6a6c271d1609edb704ef93cd7a1bae579d42600b179d4a3ea437836fc9ac5d9ee3dd281a5635d1a012668698b9c8adfc2ca75f2c575d31992a46e640bbaf22d3cf0295f954654dadc9f3a66a3225641745c60fecc3ffc7290b2fb245fa1e593f81c79aaa433063651d193a1245968e9c378adbaa731d20166dd49677f57a993ba2d5236a7f0c416064fde74f95245aa36f7974930b804607b328134</LicenseKey>
 		<License>
 			<LicenseId>{4C256767-E6E6-4AF5-BD68-9F7ABAD0C200}</LicenseId>
 			<Name>TC3 ADS</Name>
@@ -28,6 +28,11 @@
 			<LicenseId>{02AC2825-C3C7-4D15-AAF6-4EB45EFAA2D0}</LicenseId>
 			<Name>TC3 Analytics Logger</Name>
 			<OrderNo>TF3500</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{4989A799-AEEA-4FEE-88EF-666B99EEFB45}</LicenseId>
+			<Name>TC3 Scope View Professional</Name>
+			<OrderNo>TE1300</OrderNo>
 		</License>
 	</LicenseInfo>
 </TcLicenseInfo>

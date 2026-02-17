@@ -48,7 +48,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{473F795E-248C-4607-87AF-75688FE534F9}" Name="HotdogMaker" PrjFilePath="HotdogMaker\HotdogMaker.plcproj" TmcFilePath="HotdogMaker\HotdogMaker.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{9E6E9E93-02C2-D620-98E0-F25B6FF3FCC2}" TmcPath="HotdogMaker\HotdogMaker.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{34728E63-BAEE-B477-8515-998023994D62}" TmcPath="HotdogMaker\HotdogMaker.tmc">
 					<Name>HotdogMaker Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -61,11 +61,11 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>GVL.temperatureSensor</Name>
+							<Name>GVL.temperatureSensorCopy</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.temperatureSensorCopy</Name>
+							<Name>GVL.temperatureSensor</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
@@ -613,8 +613,8 @@ Bit1: Value smaller than Limit1]]></Comment>
 				<Link VarA="PlcTask Outputs^GVL.heaterElementEnable" VarB="Channel 2^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1100)^Term 4 (EL3102)">
-				<Link VarA="PlcTask Inputs^GVL.temperatureSensor" VarB="AI Standard Channel 1^Value"/>
-				<Link VarA="PlcTask Inputs^GVL.temperatureSensorCopy" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^GVL.temperatureSensor" VarB="AI Standard Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^GVL.temperatureSensorCopy" VarB="AI Standard Channel 1^Value"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
