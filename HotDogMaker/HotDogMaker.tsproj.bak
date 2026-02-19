@@ -48,7 +48,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{473F795E-248C-4607-87AF-75688FE534F9}" Name="HotdogMaker" PrjFilePath="HotdogMaker\HotdogMaker.plcproj" TmcFilePath="HotdogMaker\HotdogMaker.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{34728E63-BAEE-B477-8515-998023994D62}" TmcPath="HotdogMaker\HotdogMaker.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{3D505103-2B5F-9F4C-6997-175E5D64192B}" TmcPath="HotdogMaker\HotdogMaker.tmc">
 					<Name>HotdogMaker Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">

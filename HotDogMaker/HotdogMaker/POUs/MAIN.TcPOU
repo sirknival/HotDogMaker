@@ -5,19 +5,77 @@
 VAR
 	flagStartup: BOOL := FALSE;
 	measuredTemperature : REAL := 0.0;
-	K_GAIN : REAL := 0.032;
-	B_OFFSET : REAL := 38;
+	K_GAIN : REAL := 0.025;
+	B_OFFSET : REAL := 45;
+	
+	(*PI-Controller Parameter Struct*)
+	PI_Ctrl_param 	  : ST_CTRL_PI_PARAMS; 
+
+	(*PI-Controller*)
+	fTargetTemperature : REAL := 200;
+    fManSyncValue     : REAL  := 200;
+	
+	fOut 			  : REAL := 0;
+    bSync             : BOOL;
+    eMode             : E_CTRL_MODE := eCTRL_MODE_ACTIVE;
+    bHold             : BOOL;
+						
+	PI_Ctrl 		  : FB_CTRl_Pi;
+	
+	(*PWM_Controller PWM*)
+	PWM_Ctrl_param 	  : ST_CTRL_PWM_OUT_PARAMS;
+	
+	(*PWM_Controller*)
+	PWM_Ctrl 		  : FB_CTRL_PWM_OUT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF flagStartup = FALSE THEN
-	GVL.heaterElementEnable := TRUE;
-	flagStartup := TRUE;
+	
+	(*Fill PI-Ctrl - parameter struct*)
+	PI_Ctrl_param.tCtrlCycleTime := T#10S;
+	PI_Ctrl_param.tTaskCycleTime := T#1S;
+	PI_Ctrl_param.tTn := T#160S;
+	PI_Ctrl_param.fKp := 5.4;
+	PI_Ctrl_param.fOutMinLimit := 0.0;
+	PI_Ctrl_param.fOutMaxLimit := 200.0;
+	
+	(*Fill PWM-Ctrl - parameter struct*)
+	PWM_Ctrl_param.tPWMPeriod := T#10S;
+	PWM_Ctrl_param.tTaskCycleTime := T#1S;
+	PWM_Ctrl_param.bInstantPWMUpdate := TRUE;
+	
+	(*End Startup procedure*)
+	flagStartup := TRUE;		
 END_IF
 (*Raumptemperatur entspricht ca -1000 bei 20 Grad*)
 (*Messung entspricht ca -1000 bei 20 Grad*)
 
-measuredTemperature := INT_TO_REAL(GVL.temperatureSensor) * K_GAIN + B_OFFSET;]]></ST>
+GVL.heaterElementEnable := TRUE;
+
+measuredTemperature := INT_TO_REAL(GVL.temperatureSensor) * K_GAIN + B_OFFSET;
+
+(*Run PI-Ctrler*)
+PI_Ctrl(
+	stParams :=PI_Ctrl_param,
+	fSetpointValue := fTargetTemperature,
+	eMode := eMode,
+	fActualValue := measuredTemperature,
+	fManSyncValue := fManSyncValue,
+	bHold := bHold,
+	bSync  := bSync
+);
+fout := PI_Ctrl.fOut;
+			
+(*Run PWM-Ctrl*)
+PWM_Ctrl(
+	stParams := PWM_Ctrl_param,
+	eMode := eCTRL_MODE_ACTIVE,
+	fPwmInput := TO_LREAL(fout));
+	
+GVL.heaterElementEnable := PWM_Ctrl.bPwmOutBitPos;
+			
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
