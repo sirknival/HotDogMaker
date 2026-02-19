@@ -18,5 +18,14 @@
     <Content Include="Scope_Temp_Time.tcscopex">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Tropfschale.svdx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Tropfschale.tcscopex">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Tropfschale_1.svdx">
+      <SubType>Content</SubType>
+    </Content>
   </ItemGroup>
 </Project>
